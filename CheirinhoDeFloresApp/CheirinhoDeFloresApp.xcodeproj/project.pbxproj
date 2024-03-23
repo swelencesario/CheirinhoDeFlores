@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C53E47C2BA0B2E10028E0AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E47B2BA0B2E10028E0AC /* LoginViewModel.swift */; };
+		7C53E4822BA0B3930028E0AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4812BA0B3930028E0AC /* User.swift */; };
+		7C53E4842BA0B43C0028E0AC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4832BA0B43C0028E0AC /* Address.swift */; };
+		7C53E4862BA0B69E0028E0AC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4852BA0B69E0028E0AC /* UserRepository.swift */; };
+		7C53E4882BA0B6F20028E0AC /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */; };
+		7C84755A2BA13C6700955475 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8475592BA13C6700955475 /* UserViewModel.swift */; };
+		7C84755D2BA13D3B00955475 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84755C2BA13D3B00955475 /* Observable.swift */; };
+		7C8475602BA338C900955475 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84755F2BA338C900955475 /* UserViewController.swift */; };
+		7CD4BD142BA8B832004507ED /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */; };
+		7CF798502B9E92A900AB4638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7984F2B9E92A900AB4638 /* AppDelegate.swift */; };
+		7CF798522B9E92A900AB4638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF798512B9E92A900AB4638 /* SceneDelegate.swift */; };
+		7CF798542B9E92A900AB4638 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF798532B9E92A900AB4638 /* LoginViewController.swift */; };
+		7CF798572B9E92A900AB4638 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7CF798562B9E92A900AB4638 /* Base */; };
+		7CF798592B9E92AA00AB4638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF798582B9E92AA00AB4638 /* Assets.xcassets */; };
+		7CF7985C2B9E92AA00AB4638 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7985B2B9E92AA00AB4638 /* Base */; };
+		CEB06B739ED5E4D98AB59CBD /* Pods_CheirinhoDeFloresApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771BF12EC2BF463D00420272 /* Pods_CheirinhoDeFloresApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29A5FDD35A267A39E8795929 /* Pods-CheirinhoDeFloresApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheirinhoDeFloresApp.release.xcconfig"; path = "Target Support Files/Pods-CheirinhoDeFloresApp/Pods-CheirinhoDeFloresApp.release.xcconfig"; sourceTree = "<group>"; };
+		40496031AA6D379F3964AE85 /* Pods-CheirinhoDeFloresApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheirinhoDeFloresApp.debug.xcconfig"; path = "Target Support Files/Pods-CheirinhoDeFloresApp/Pods-CheirinhoDeFloresApp.debug.xcconfig"; sourceTree = "<group>"; };
+		771BF12EC2BF463D00420272 /* Pods_CheirinhoDeFloresApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheirinhoDeFloresApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C53E47B2BA0B2E10028E0AC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7C53E4812BA0B3930028E0AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7C53E4832BA0B43C0028E0AC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		7C53E4852BA0B69E0028E0AC /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
+		7C8475592BA13C6700955475 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		7C84755C2BA13D3B00955475 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		7C84755F2BA338C900955475 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7CF7984C2B9E92A900AB4638 /* CheirinhoDeFloresApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheirinhoDeFloresApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF7984F2B9E92A900AB4638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7CF798512B9E92A900AB4638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7CF798532B9E92A900AB4638 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7CF798562B9E92A900AB4638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CF798582B9E92AA00AB4638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CF7985B2B9E92AA00AB4638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7CF7985D2B9E92AA00AB4638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CF798492B9E92A900AB4638 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB06B739ED5E4D98AB59CBD /* Pods_CheirinhoDeFloresApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E971B5D4056A73D90585FDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				771BF12EC2BF463D00420272 /* Pods_CheirinhoDeFloresApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6FE63ABB19F2C01349216B2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40496031AA6D379F3964AE85 /* Pods-CheirinhoDeFloresApp.debug.xcconfig */,
+				29A5FDD35A267A39E8795929 /* Pods-CheirinhoDeFloresApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7C53E4782BA0B25E0028E0AC /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E47D2BA0B3030028E0AC /* Model */,
+				7C53E47E2BA0B3370028E0AC /* Repository */,
+				7C53E47B2BA0B2E10028E0AC /* LoginViewModel.swift */,
+				7CF798532B9E92A900AB4638 /* LoginViewController.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		7C53E4792BA0B2680028E0AC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E47F2BA0B3690028E0AC /* Repository */,
+				7C53E4802BA0B3820028E0AC /* Model */,
+				7C8475582BA13C2B00955475 /* ViewModel */,
+				7C84755E2BA3387800955475 /* View */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		7C53E47A2BA0B2790028E0AC /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		7C53E47D2BA0B3030028E0AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C53E47E2BA0B3370028E0AC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7C53E47F2BA0B3690028E0AC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E4852BA0B69E0028E0AC /* UserRepository.swift */,
+				7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7C53E4802BA0B3820028E0AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E4812BA0B3930028E0AC /* User.swift */,
+				7C53E4832BA0B43C0028E0AC /* Address.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C8475582BA13C2B00955475 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7C8475592BA13C6700955475 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7C84755B2BA13D2C00955475 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7C84755C2BA13D3B00955475 /* Observable.swift */,
+				7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		7C84755E2BA3387800955475 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C84755F2BA338C900955475 /* UserViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CF798432B9E92A900AB4638 = {
+			isa = PBXGroup;
+			children = (
+				7CF7984E2B9E92A900AB4638 /* CheirinhoDeFloresApp */,
+				7CF7984D2B9E92A900AB4638 /* Products */,
+				6FE63ABB19F2C01349216B2E /* Pods */,
+				2E971B5D4056A73D90585FDE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7CF7984D2B9E92A900AB4638 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CF7984C2B9E92A900AB4638 /* CheirinhoDeFloresApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CF7984E2B9E92A900AB4638 /* CheirinhoDeFloresApp */ = {
+			isa = PBXGroup;
+			children = (
+				7C84755B2BA13D2C00955475 /* Util */,
+				7C53E47A2BA0B2790028E0AC /* HomeScreen */,
+				7C53E4792BA0B2680028E0AC /* User */,
+				7C53E4782BA0B25E0028E0AC /* LoginScreen */,
+				7CF7984F2B9E92A900AB4638 /* AppDelegate.swift */,
+				7CF798512B9E92A900AB4638 /* SceneDelegate.swift */,
+				7CF798552B9E92A900AB4638 /* Main.storyboard */,
+				7CF798582B9E92AA00AB4638 /* Assets.xcassets */,
+				7CF7985A2B9E92AA00AB4638 /* LaunchScreen.storyboard */,
+				7CF7985D2B9E92AA00AB4638 /* Info.plist */,
+			);
+			path = CheirinhoDeFloresApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CF7984B2B9E92A900AB4638 /* CheirinhoDeFloresApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CF798602B9E92AA00AB4638 /* Build configuration list for PBXNativeTarget "CheirinhoDeFloresApp" */;
+			buildPhases = (
+				1E940E9178CCEEA9E722728E /* [CP] Check Pods Manifest.lock */,
+				7CF798482B9E92A900AB4638 /* Sources */,
+				7CF798492B9E92A900AB4638 /* Frameworks */,
+				7CF7984A2B9E92A900AB4638 /* Resources */,
+				FE0C37CE8BCD4805C2EC166A /* [CP] Embed Pods Frameworks */,
+				7C541A432BA3867D00E912D6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CheirinhoDeFloresApp;
+			productName = CheirinhoDeFloresApp;
+			productReference = 7CF7984C2B9E92A900AB4638 /* CheirinhoDeFloresApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CF798442B9E92A900AB4638 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					7CF7984B2B9E92A900AB4638 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 7CF798472B9E92A900AB4638 /* Build configuration list for PBXProject "CheirinhoDeFloresApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7CF798432B9E92A900AB4638;
+			productRefGroup = 7CF7984D2B9E92A900AB4638 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CF7984B2B9E92A900AB4638 /* CheirinhoDeFloresApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CF7984A2B9E92A900AB4638 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF798592B9E92AA00AB4638 /* Assets.xcassets in Resources */,
+				7CF7985C2B9E92AA00AB4638 /* Base in Resources */,
+				7CF798572B9E92A900AB4638 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E940E9178CCEEA9E722728E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheirinhoDeFloresApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C541A432BA3867D00E912D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		FE0C37CE8BCD4805C2EC166A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheirinhoDeFloresApp/Pods-CheirinhoDeFloresApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheirinhoDeFloresApp/Pods-CheirinhoDeFloresApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheirinhoDeFloresApp/Pods-CheirinhoDeFloresApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CF798482B9E92A900AB4638 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C53E4882BA0B6F20028E0AC /* AddressRepository.swift in Sources */,
+				7C53E4842BA0B43C0028E0AC /* Address.swift in Sources */,
+				7C53E47C2BA0B2E10028E0AC /* LoginViewModel.swift in Sources */,
+				7C8475602BA338C900955475 /* UserViewController.swift in Sources */,
+				7CD4BD142BA8B832004507ED /* ViewController+Extensions.swift in Sources */,
+				7CF798542B9E92A900AB4638 /* LoginViewController.swift in Sources */,
+				7C53E4862BA0B69E0028E0AC /* UserRepository.swift in Sources */,
+				7C53E4822BA0B3930028E0AC /* User.swift in Sources */,
+				7C84755D2BA13D3B00955475 /* Observable.swift in Sources */,
+				7CF798502B9E92A900AB4638 /* AppDelegate.swift in Sources */,
+				7C84755A2BA13C6700955475 /* UserViewModel.swift in Sources */,
+				7CF798522B9E92A900AB4638 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7CF798552B9E92A900AB4638 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CF798562B9E92A900AB4638 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7CF7985A2B9E92AA00AB4638 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CF7985B2B9E92AA00AB4638 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7CF7985E2B9E92AA00AB4638 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7CF7985F2B9E92AA00AB4638 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7CF798612B9E92AA00AB4638 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40496031AA6D379F3964AE85 /* Pods-CheirinhoDeFloresApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5723PV2F5D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CheirinhoDeFloresApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swelen.CheirinhoDeFloresApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				l = "";
+				"l[arch=*]" = "";
+			};
+			name = Debug;
+		};
+		7CF798622B9E92AA00AB4638 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29A5FDD35A267A39E8795929 /* Pods-CheirinhoDeFloresApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5723PV2F5D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CheirinhoDeFloresApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swelen.CheirinhoDeFloresApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				l = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CF798472B9E92A900AB4638 /* Build configuration list for PBXProject "CheirinhoDeFloresApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF7985E2B9E92AA00AB4638 /* Debug */,
+				7CF7985F2B9E92AA00AB4638 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CF798602B9E92AA00AB4638 /* Build configuration list for PBXNativeTarget "CheirinhoDeFloresApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF798612B9E92AA00AB4638 /* Debug */,
+				7CF798622B9E92AA00AB4638 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7CF798442B9E92A900AB4638 /* Project object */;
+}
