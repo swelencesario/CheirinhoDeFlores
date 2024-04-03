@@ -8,7 +8,7 @@
 import Foundation
 
 class UserViewModel {
-    //let userId: Int?
+    var userId: Int?
     var fullName: String? = nil
     var username: String? = nil
     var password: String? = nil
@@ -46,13 +46,15 @@ class UserViewModel {
     }
     
     func addUser() {
-        userRepository.addUser(fullName: fullName ?? "", username: username ?? "", email: email ?? "", password: password ?? "", phoneNumber: phoneNumber ?? "") { user in
-            guard let user = user else {
+        userRepository.addUser(fullName: fullName ?? "", username: username ?? "", email: email ?? "", password: password ?? "", phoneNumber: phoneNumber ?? "") { userId in
+            guard let userId = userId else {
                 self.errorTitle = "Desculpe, algo inesperado aconteceu"
                 self.errorMessage = "Tente novamente em alguns instantes"
+                print(userId as Any)
                 return
             }
-            print(user)
+            self.userId = userId
+            print(userId)
         }
     }
 }

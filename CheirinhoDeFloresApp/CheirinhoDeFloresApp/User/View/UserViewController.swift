@@ -9,7 +9,7 @@ import UIKit
 
 class UserViewController: UIViewController {
     
-    let userViewModel = UserViewModel()
+    var userViewModel = UserViewModel()
     var isValidFullName: Bool = false
     var isValidUsername: Bool = false
     var isValidPassword: Bool = false
@@ -48,75 +48,81 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let repository = UserRepository()
-        repository.findUserById(userId: 18) { result in
-            print(result as Any)
-        }
     }
     
-    func parseData() {
-        userViewModel.fullName = fullNameOutlet.text?.capitalized
-        userViewModel.username = usernameOutlet.text?.lowercased().trimmingCharacters(in: .whitespaces)
-        userViewModel.email = emailOutlet.text?.lowercased()
-        userViewModel.password = passwordOutlet.text
-        userViewModel.phoneNumber = phoneOutlet.text
-    }
-    
-    func validateFullName() {
-        self.isValidFullName = userViewModel.isValidFullName(fullName: fullNameOutlet.text?.trimmingCharacters(in: .whitespaces) ?? "")
-        if !isValidFullName {
-            notValidTextFieldStyle(textField: fullNameOutlet)
-        } else {
-            validTextFieldStyle(textField: fullNameOutlet)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToAddressSegue" {
+           let destinationVC = segue.destination as? AddressViewController
+            destinationVC?.userId = userViewModel.userId
+            print(userViewModel.userId as Any)
         }
     }
-    
-    func validateUsername() {
-        self.isValidUsername = userViewModel.isValidUsername(username: usernameOutlet.text ?? "")
-        if !isValidUsername {
-            notValidTextFieldStyle(textField: usernameOutlet)
-        } else {
-            validTextFieldStyle(textField: usernameOutlet)
+        
+        func parseData() {
+            userViewModel.fullName = fullNameOutlet.text?.capitalized
+            userViewModel.username = usernameOutlet.text?.lowercased().trimmingCharacters(in: .whitespaces)
+            userViewModel.email = emailOutlet.text?.lowercased()
+            userViewModel.password = passwordOutlet.text
+            userViewModel.phoneNumber = phoneOutlet.text
+        }
+        
+        func validateFullName() {
+            self.isValidFullName = userViewModel.isValidFullName(fullName: fullNameOutlet.text?.trimmingCharacters(in: .whitespaces) ?? "")
+            if !isValidFullName {
+                notValidTextFieldStyle(textField: fullNameOutlet)
+            } else {
+                validTextFieldStyle(textField: fullNameOutlet)
+            }
+        }
+        
+        func validateUsername() {
+            self.isValidUsername = userViewModel.isValidUsername(username: usernameOutlet.text ?? "")
+            if !isValidUsername {
+                notValidTextFieldStyle(textField: usernameOutlet)
+            } else {
+                validTextFieldStyle(textField: usernameOutlet)
+            }
+        }
+        
+        func validadePassword() {
+            self.isValidPassword = userViewModel.isValidPassword(password: passwordOutlet.text ?? "")
+            if !isValidPassword {
+                notValidTextFieldStyle(textField: passwordOutlet)
+            } else {
+                validTextFieldStyle(textField: passwordOutlet)
+            }
+        }
+        
+        func validadeEmail() {
+            self.isValidEmail = userViewModel.isValidMail(email: emailOutlet.text ?? "")
+            if !isValidEmail {
+                notValidTextFieldStyle(textField: emailOutlet)
+            } else {
+                validTextFieldStyle(textField: emailOutlet)
+            }
+        }
+        
+        func validadePhone() {
+            self.isValidPhone = userViewModel.isValidPhoneNumber(phone: phoneOutlet.text ?? "")
+            if !isValidPhone {
+                notValidTextFieldStyle(textField: phoneOutlet)
+            } else {
+                validTextFieldStyle(textField: phoneOutlet)
+            }
+        }
+        
+        func validateTextFields() {
+            if isValidFullName &&
+                isValidUsername &&
+                isValidPassword &&
+                isValidEmail &&
+                isValidPhone {
+                parseData()
+                userViewModel.addUser()
+                performSegue(withIdentifier: "goToAddressSegue", sender: nil)
+                print(userViewModel.userId as Any)
+            } else {
+                callErrorAlert(title: "Erro", message: "Por favor, preencha os campos corretamente")
+            }
         }
     }
-    
-    func validadePassword() {
-        self.isValidPassword = userViewModel.isValidPassword(password: passwordOutlet.text ?? "")
-        if !isValidPassword {
-            notValidTextFieldStyle(textField: passwordOutlet)
-        } else {
-            validTextFieldStyle(textField: passwordOutlet)
-        }
-    }
-    
-    func validadeEmail() {
-        self.isValidEmail = userViewModel.isValidMail(email: emailOutlet.text ?? "")
-        if !isValidEmail {
-            notValidTextFieldStyle(textField: emailOutlet)
-        } else {
-            validTextFieldStyle(textField: emailOutlet)
-        }
-    }
-    
-    func validadePhone() {
-        self.isValidPhone = userViewModel.isValidPhoneNumber(phone: phoneOutlet.text ?? "")
-        if !isValidPhone {
-            notValidTextFieldStyle(textField: phoneOutlet)
-        } else {
-            validTextFieldStyle(textField: phoneOutlet)
-        }
-    }
-    
-    func validateTextFields() {
-        if isValidFullName &&
-            isValidUsername &&
-            isValidPassword &&
-            isValidEmail &&
-            isValidPhone {
-            parseData()
-            userViewModel.addUser()
-        } else {
-            callErrorAlert(title: "Erro", message: "Por favor, preencha os campos corretamente")
-        }
-    }
-}
