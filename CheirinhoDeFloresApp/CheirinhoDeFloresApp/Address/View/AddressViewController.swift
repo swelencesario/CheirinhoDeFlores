@@ -8,6 +8,7 @@
 import UIKit
 
 class AddressViewController: UIViewController {
+    var coordinator: MainCoordinator?
     let addressViewModel = AddressViewModel()
     var userId: Int?
     

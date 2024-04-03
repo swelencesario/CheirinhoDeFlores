@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserViewModel {
+class UserRegisterViewModel {
     var userId: Int?
     var fullName: String? = nil
     var username: String? = nil
@@ -17,10 +17,10 @@ class UserViewModel {
     var errorTitle: String? = nil
     var errorMessage: String? = nil
     
-    var userRepository: UserRepositoryProtocol
+    var userRegisterRepository: UserRegisterRepositoryProtocol
     
-    init(userRepository: UserRepositoryProtocol = UserRepository()) {
-        self.userRepository = userRepository
+    init(userRegisterRepository: UserRegisterRepositoryProtocol = UserRegisterRepository()) {
+        self.userRegisterRepository = userRegisterRepository
     }
     
     func isValidFullName(fullName: String) -> Bool {
@@ -46,7 +46,7 @@ class UserViewModel {
     }
     
     func addUser() {
-        userRepository.addUser(fullName: fullName ?? "", username: username ?? "", email: email ?? "", password: password ?? "", phoneNumber: phoneNumber ?? "") { userId in
+        userRegisterRepository.addUser(fullName: fullName ?? "", username: username ?? "", email: email ?? "", password: password ?? "", phoneNumber: phoneNumber ?? "") { userId in
             guard let userId = userId else {
                 self.errorTitle = "Desculpe, algo inesperado aconteceu"
                 self.errorMessage = "Tente novamente em alguns instantes"

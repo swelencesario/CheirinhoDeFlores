@@ -16,26 +16,20 @@ public class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-        //homeVC.modalPresentationStyle = .overFullScreen
-        //homeVC.modalTransitionStyle = .crossDissolve
-        
         let vc = LoginViewController()
         vc.coordinator = self
-        navigationController.pushViewController(loginVC, animated: false)
+        navigationController.pushViewController(vc, animated: false)
     }
     
-    func buySubscription() {
-//        let vc = BuyViewController()
-//        vc.coordinator = self
-//        navigationController.pushViewController(vc, animated: true)
+    func goToRegisterScreen() {
+        let vc = UserRegisterViewController()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
 
-    func createAccount() {
-//        let vc = CreateAccountViewController()
-//        vc.coordinator = self
-//        navigationController.pushViewController(vc, animated: true)
+    func goToAddressScreen() {
+        let vc = AddressViewController()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
 }

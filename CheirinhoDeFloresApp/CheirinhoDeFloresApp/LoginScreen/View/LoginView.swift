@@ -21,7 +21,8 @@ class LoginView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont(name: "Bradley Hand Bold 18.0", size: 18.0)
+        label.text = "Cheirinho de Flores"
+        label.font = UIFont(name: "Bradley Hand Bold", size: 18.0)
         label.textColor = UIColor(named: "greatPinkColor")
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -30,7 +31,9 @@ class LoginView: UIView {
     
     lazy var emailField: UITextField = {
         let textField = UITextField()
+        textField.borderStyle = .roundedRect
         textField.placeholder = "email"
+        textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = .no
@@ -40,11 +43,12 @@ class LoginView: UIView {
     
     lazy var passwordField: UITextField = {
         let textField = UITextField()
+        textField.borderStyle = .roundedRect
         textField.placeholder = "password"
+        textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = .no
-        //height = 48
         
         return textField
     }()
@@ -53,6 +57,7 @@ class LoginView: UIView {
         let button = UIButton(type: .roundedRect)
         button.setTitle("Logar", for: .normal)
         button.backgroundColor = UIColor(named: "greatPinkColor")
+        button.tintColor = .white
         button.clipsToBounds = true
         button.layer.cornerRadius = 4.0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -71,27 +76,27 @@ class LoginView: UIView {
     
     lazy var haveAccountLabel: UILabel = {
         let label = UILabel()
+        label.text = "Ainda não tem conta? "
         label.textAlignment = .center
-        label.font = UIFont(name: "Hiragino Sans W3 14.0", size: 14.0)
+        label.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }()
     
-    lazy var registerLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont(name: "Hiragino Sans W3 14.0", size: 14.0)
-        label.textAlignment = .right
-        label.textColor = UIColor(named: "greatPinkColor")
-        label.translatesAutoresizingMaskIntoConstraints = false
+    lazy var registerButton: UIButton = {
+        let button = UIButton(configuration: .plain())
+        button.setTitle("Registre-se", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
+        button.tintColor = UIColor(named: "greatPinkColor")
+        button.translatesAutoresizingMaskIntoConstraints = false
         
-        return label
+        return button
     }()
     
     lazy var registerStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [haveAccountLabel, registerLabel])
+        let stack = UIStackView(arrangedSubviews: [haveAccountLabel, registerButton])
         stack.axis = .horizontal
         stack.spacing = 0
         stack.distribution = .fill
@@ -101,6 +106,7 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        backgroundColor = .systemBackground
         setupViews()
         setupConstraints()
     }
@@ -129,7 +135,9 @@ class LoginView: UIView {
     func setIconConstraints() {
         NSLayoutConstraint.activate([
             icon.heightAnchor.constraint(equalToConstant: 75.0),
-            icon.widthAnchor.constraint(equalToConstant: 75.0)
+            icon.widthAnchor.constraint(equalToConstant: 75.0),
+            icon.centerXAnchor.constraint(equalTo: centerXAnchor),
+            icon.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 40.0)
         ])
     }
     

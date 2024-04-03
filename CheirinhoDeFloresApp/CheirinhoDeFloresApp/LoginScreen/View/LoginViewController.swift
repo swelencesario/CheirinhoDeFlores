@@ -9,12 +9,18 @@ import UIKit
 
 class LoginViewController: UIViewController {
     var coordinator: MainCoordinator?
+    let loginView = LoginView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loginView.registerButton.addTarget(self, action: #selector(goToRegisterScreen), for: .touchUpInside)
     }
-
-
+    override func loadView() {
+        self.view = loginView
+    }
+    
+    @objc func goToRegisterScreen() {
+        coordinator?.goToRegisterScreen()
+    }
 }
 
