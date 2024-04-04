@@ -125,8 +125,8 @@
 		7C14EDF52BB26ED90034DCE7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7C14EDF62BB26EF20034DCE7 /* AddressViewController.swift */,
 				7C4EECB22BBDE82200A8844F /* AddressView.swift */,
+				7C14EDF62BB26EF20034DCE7 /* AddressViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

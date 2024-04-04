@@ -8,55 +8,55 @@
 import UIKit
 
 class AddressViewController: UIViewController {
-    var coordinator: MainCoordinator?
-    let addressViewModel = AddressViewModel()
     var userId: Int?
+    var coordinator: MainCoordinator?
+    let addressView = AddressView()
+    var addressViewModel = AddressViewModel()
     
-    @IBOutlet weak var zipCodeOutlet: UITextField!
-    @IBOutlet weak var streetOutlet: UITextField!
-    @IBOutlet weak var houseNumberOutlet: UITextField!
-    @IBOutlet weak var complementOutlet: UITextField!
-    @IBOutlet weak var neighborhoodOutlet: UITextField!
-    @IBOutlet weak var cityOutlet: UITextField!
-    @IBOutlet weak var stateOutlet: UITextField!
-    
-    @IBAction func searchZipCode(_ sender: Any) {
-        
-    }
-    
-    @IBAction func confirmButton(_ sender: Any) {
-        saveAddress()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        print(userId as Any)
+        addressView.saveButton.addTarget(self, action: #selector(saveAddress), for: .touchUpInside)
+    }
+    
+    override func loadView() {
+        self.view = addressView
+    }
+    
+    init(coordinator: MainCoordinator? = nil, userId: Int) {
+        self.coordinator = coordinator
+        self.userId = userId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func parseData() {
-        addressViewModel.userId = self.userId
-        print(addressViewModel.userId as Any)
-        print(self.userId as Any)
-        addressViewModel.zipCode = zipCodeOutlet.text
-        addressViewModel.street = streetOutlet.text
-        addressViewModel.number = Int(houseNumberOutlet.text ?? "")
-        addressViewModel.complement = complementOutlet.text
-        addressViewModel.neighborhood = neighborhoodOutlet.text
-        addressViewModel.city = cityOutlet.text
-        addressViewModel.state = stateOutlet.text
+        //addressViewModel.userId = self.userId
+        //print(addressViewModel.userId as Any)
+        //print(self.userId as Any)
+        addressViewModel.zipCode = addressView.zipCodeField.text
+        addressViewModel.street = addressView.streetField.text
+        addressViewModel.number = Int(addressView.houseNumberField.text ?? "")
+        addressViewModel.complement = addressView.complementField.text
+        addressViewModel.neighborhood = addressView.neighborhoodField.text
+        addressViewModel.city = addressView.cityField.text
+        addressViewModel.state = addressView.stateField.text
     }
     
-    func saveAddress() {
+    @objc func saveAddress() {
         parseData()
-        if zipCodeOutlet.text?.isEmpty == false &&
-            streetOutlet.text?.isEmpty == false &&
-            houseNumberOutlet.text?.isEmpty == false &&
-            complementOutlet.text?.isEmpty == false &&
-            neighborhoodOutlet.text?.isEmpty == false &&
-            cityOutlet.text?.isEmpty == false &&
-            stateOutlet.text?.isEmpty == false{
-            addressViewModel.addAddress() // arrumar o userID, que deve vir da user view controller.
+        if addressView.zipCodeField.text?.isEmpty == false &&
+            addressView.streetField.text?.isEmpty == false &&
+            addressView.houseNumberField.text?.isEmpty == false &&
+            addressView.complementField.text?.isEmpty == false &&
+            addressView.neighborhoodField.text?.isEmpty == false &&
+            addressView.cityField.text?.isEmpty == false &&
+            addressView.stateField.text?.isEmpty == false {
+            addressViewModel.addAddress(id: userId ?? 0)
         }
     }
 }

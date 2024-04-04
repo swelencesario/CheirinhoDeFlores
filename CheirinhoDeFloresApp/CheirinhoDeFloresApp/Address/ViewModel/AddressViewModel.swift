@@ -8,7 +8,7 @@
 import Foundation
 
 class AddressViewModel {
-    var userId: Int? = nil // preciso trazer o id da user view controller
+    //var userId: Int? = nil // preciso trazer o id da user view controller
     var zipCode: String? = nil
     var street: String? = nil
     var number: Int? = nil
@@ -22,15 +22,15 @@ class AddressViewModel {
         self.addressRepository = addressRepository
     }
     
-    func addAddress() {
-        addressRepository.addAddress(userID: userId ?? 0, zipCode: zipCode ?? "", street: street ?? "", number: number ?? 0, complement: complement ?? "", neighborhood: neighborhood ?? "", city: city ?? "", state: state ?? "") { result in
+    func addAddress(id: Int) {
+        addressRepository.addAddress(userID: id, zipCode: zipCode ?? "", street: street ?? "", number: number ?? 0, complement: complement ?? "", neighborhood: neighborhood ?? "", city: city ?? "", state: state ?? "") { result in
             guard let result = result else {
                 //tratar o erro
                 print("erro no endereço")
-                print(self.userId as Any)
+                //print(self.userId as Any)
                 return
             }
-            print(self.userId as Any)
+            //print(self.userId as Any)
             print("sucesso no endereço")
             //no sucesso, exibir uma mensagem de sucesso
         }

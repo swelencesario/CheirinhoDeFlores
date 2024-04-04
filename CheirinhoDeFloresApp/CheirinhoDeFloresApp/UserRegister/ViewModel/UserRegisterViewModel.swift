@@ -16,10 +16,12 @@ class UserRegisterViewModel {
     var phoneNumber: String? = nil
     var errorTitle: String? = nil
     var errorMessage: String? = nil
+    var coordinator: MainCoordinator
     
     var userRegisterRepository: UserRegisterRepositoryProtocol
     
-    init(userRegisterRepository: UserRegisterRepositoryProtocol = UserRegisterRepository()) {
+    init(coordinator: MainCoordinator, userRegisterRepository: UserRegisterRepositoryProtocol = UserRegisterRepository()) {
+        self.coordinator = coordinator
         self.userRegisterRepository = userRegisterRepository
     }
     
@@ -54,6 +56,7 @@ class UserRegisterViewModel {
                 return
             }
             self.userId = userId
+            self.coordinator.goToAddressScreen(userId: userId)
             print(userId)
         }
     }

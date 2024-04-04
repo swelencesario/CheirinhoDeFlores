@@ -22,13 +22,13 @@ public class MainCoordinator: Coordinator {
     }
     
     func goToRegisterScreen() {
-        let vc = UserRegisterViewController()
-        vc.coordinator = self
+        let vm = UserRegisterViewModel(coordinator: self)
+        let vc = UserRegisterViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
 
-    func goToAddressScreen() {
-        let vc = AddressViewController()
+    func goToAddressScreen(userId: Int) {
+        let vc = AddressViewController(userId: userId)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
