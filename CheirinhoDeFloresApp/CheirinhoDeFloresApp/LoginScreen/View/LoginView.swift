@@ -29,13 +29,12 @@ class LoginView: UIView {
         return label
     }()
     
-    lazy var emailField: UITextField = {
+    lazy var usernameField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.placeholder = "email"
+        textField.placeholder = "username"
         textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .emailAddress
         textField.autocorrectionType = .no
         
         return textField
@@ -66,7 +65,7 @@ class LoginView: UIView {
     }()
     
     lazy var containerStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [emailField, passwordField, loginButton])
+        let stack = UIStackView(arrangedSubviews: [usernameField, passwordField, loginButton])
         stack.axis = .vertical
         stack.spacing = 16.0
         stack.distribution = .fill
@@ -125,7 +124,7 @@ class LoginView: UIView {
     func setupConstraints() {
         setIconConstraints()
         setTitleLabelConstraints()
-        setEmailFieldConstraints()
+        setUsernameFieldConstraints()
         setPasswordFieldConstraints()
         setButtonConstraints()
         setContainerStackConstraints()
@@ -164,9 +163,9 @@ class LoginView: UIView {
         ])
     }
     
-    func setEmailFieldConstraints() {
+    func setUsernameFieldConstraints() {
         NSLayoutConstraint.activate([
-            emailField.heightAnchor.constraint(equalToConstant: 48.0)
+            usernameField.heightAnchor.constraint(equalToConstant: 48.0)
         ])
     }
     

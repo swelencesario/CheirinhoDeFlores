@@ -18,6 +18,7 @@
 		7C53E4882BA0B6F20028E0AC /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */; };
 		7C84755A2BA13C6700955475 /* UserRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8475592BA13C6700955475 /* UserRegisterViewModel.swift */; };
 		7C8475602BA338C900955475 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84755F2BA338C900955475 /* UserRegisterViewController.swift */; };
+		7CC90AD32BC47B2100588377 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC90AD22BC47B2100588377 /* LoginRepository.swift */; };
 		7CD4BD142BA8B832004507ED /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */; };
 		7CE9EE402BBB950B00DDE546 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE3F2BBB950B00DDE546 /* Coordinator.swift */; };
 		7CE9EE422BBB957C00DDE546 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE412BBB957C00DDE546 /* MainCoordinator.swift */; };
@@ -45,6 +46,7 @@
 		7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
 		7C8475592BA13C6700955475 /* UserRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewModel.swift; sourceTree = "<group>"; };
 		7C84755F2BA338C900955475 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
+		7CC90AD22BC47B2100588377 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7CE9EE3F2BBB950B00DDE546 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CE9EE412BBB957C00DDE546 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -135,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				7C53E47E2BA0B3370028E0AC /* Repository */,
-				7C53E47D2BA0B3030028E0AC /* Model */,
 				7CE9EE432BBB999700DDE546 /* View */,
 				7CE9EE442BBB99AB00DDE546 /* ViewModel */,
 			);
@@ -160,16 +161,10 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		7C53E47D2BA0B3030028E0AC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		7C53E47E2BA0B3370028E0AC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				7CC90AD22BC47B2100588377 /* LoginRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -416,6 +411,7 @@
 				7C8475602BA338C900955475 /* UserRegisterViewController.swift in Sources */,
 				7CD4BD142BA8B832004507ED /* ViewController+Extensions.swift in Sources */,
 				7CF798542B9E92A900AB4638 /* LoginViewController.swift in Sources */,
+				7CC90AD32BC47B2100588377 /* LoginRepository.swift in Sources */,
 				7CE9EE402BBB950B00DDE546 /* Coordinator.swift in Sources */,
 				7C53E4862BA0B69E0028E0AC /* UserRegisterRepository.swift in Sources */,
 				7C53E4822BA0B3930028E0AC /* User.swift in Sources */,
