@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 
-protocol UserRepositoryProtocol {
+protocol UserRegisterRepositoryProtocol {
     func addUser(fullName: String, username: String, email: String, password: String, phoneNumber: String, completion: @escaping (Int?) -> ())
     func findUserById(userId: Int, completion: @escaping (User?) -> ())
 }
 
-class UserRepository : UserRepositoryProtocol{
+class UserRegisterRepository : UserRegisterRepositoryProtocol{
     func findUserById(userId: Int, completion: @escaping (User?) -> ()) {
         
         let endpoint: String = "http://localhost:5240/api/users/" + String(userId)

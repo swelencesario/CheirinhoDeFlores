@@ -7,8 +7,8 @@
 
 import Foundation
 
-class UserViewModel {
-    //let userId: Int?
+class UserRegisterViewModel {
+    var userId: Int?
     var fullName: String? = nil
     var username: String? = nil
     var password: String? = nil
@@ -16,11 +16,13 @@ class UserViewModel {
     var phoneNumber: String? = nil
     var errorTitle: String? = nil
     var errorMessage: String? = nil
+    var coordinator: MainCoordinator
     
-    var userRepository: UserRepositoryProtocol
+    var userRegisterRepository: UserRegisterRepositoryProtocol
     
-    init(userRepository: UserRepositoryProtocol = UserRepository()) {
-        self.userRepository = userRepository
+    init(coordinator: MainCoordinator, userRegisterRepository: UserRegisterRepositoryProtocol = UserRegisterRepository()) {
+        self.coordinator = coordinator
+        self.userRegisterRepository = userRegisterRepository
     }
     
     func isValidFullName(fullName: String) -> Bool {
@@ -46,13 +48,16 @@ class UserViewModel {
     }
     
     func addUser() {
-        userRepository.addUser(fullName: fullName ?? "", username: username ?? "", email: email ?? "", password: password ?? "", phoneNumber: phoneNumber ?? "") { user in
-            guard let user = user else {
+        userRegisterRepository.addUser(fullName: fullName ?? "", username: username ?? "", email: email ?? "", password: password ?? "", phoneNumber: phoneNumber ?? "") { userId in
+            guard let userId = userId else {
                 self.errorTitle = "Desculpe, algo inesperado aconteceu"
                 self.errorMessage = "Tente novamente em alguns instantes"
+                print(userId as Any)
                 return
             }
-            print(user)
+            self.userId = userId
+            self.coordinator.goToAddressScreen(userId: userId)
+            print(userId)
         }
     }
 }
