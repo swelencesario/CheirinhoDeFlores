@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     var flowers = [UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower")]
     
     let homeView = HomeView()
+    var homeViewModel = FlowerViewModel()
     let coordinator: MainCoordinator
     
     init(coordinator: MainCoordinator) {
@@ -28,6 +29,7 @@ class HomeViewController: UIViewController {
         homeView.collection.dataSource = self
         homeView.collection.delegate = self
         self.title = "Presenteie com flores"
+        homeViewModel.getFlowers()
     }
     
     override func loadView() {
