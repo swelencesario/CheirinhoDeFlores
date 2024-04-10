@@ -9,18 +9,20 @@ import Foundation
 
 class LoginViewModel {
     let repository: LoginRepositoryProtocol
+    var coordinator: MainCoordinator
     
-    init(repository: LoginRepositoryProtocol = LoginRepository()) {
+    init(repository: LoginRepositoryProtocol = LoginRepository(), coordinator: MainCoordinator) {
         self.repository = repository
+        self.coordinator = coordinator
     }
     
     func login(username: String, password: String) {
         repository.login(username: username, password: password) { success in
             guard let success = success else {
-                print("erro no login")
+                self.coordinator.callAlert(title: "Usuário ou senha incorretos", message: "")
                 return
             }
-            print("sucesso no login")
+            self.coordinator.goToHomeScreen()
         }
     }
 }

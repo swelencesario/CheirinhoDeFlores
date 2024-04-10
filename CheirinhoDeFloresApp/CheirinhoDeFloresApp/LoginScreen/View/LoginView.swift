@@ -32,6 +32,7 @@ class LoginView: UIView {
     lazy var usernameField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
+        textField.autocapitalizationType = .none
         textField.placeholder = "username"
         textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +47,7 @@ class LoginView: UIView {
         textField.placeholder = "password"
         textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .emailAddress
+        textField.isSecureTextEntry = true
         textField.autocorrectionType = .no
         
         return textField
