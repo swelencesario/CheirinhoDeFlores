@@ -8,11 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    //mock para a célula
-    var flowers = [UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower"), UIImage(named: "flower")]
-    
+    var flowers = [CellViewModel]()
     let homeView = HomeView()
-    var homeViewModel = FlowerViewModel()
+    var homeViewModel = HomeViewModel()
     let coordinator: MainCoordinator
     
     init(coordinator: MainCoordinator) {
@@ -26,32 +24,46 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         homeView.collection.dataSource = self
         homeView.collection.delegate = self
-        self.title = "Presenteie com flores"
+        bindFlowers()
         homeViewModel.getFlowers()
+        
+        
+        self.title = "Presenteie com flores"
     }
     
     override func loadView() {
         super.loadView()
         self.view = homeView
     }
+    
+    func bindFlowers() {
+        homeViewModel.flowers.bind { [weak self] flowerList in
+            guard let flowerList = flowerList else { return }
+            self?.flowers = flowerList
+            self?.homeView.collection.reloadData()
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return flowers.count
+        print(self.flowers.count)
+        return self.flowers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-        //cell?.setup(searchResults[indexPath.row])
+        
+        cell?.setup(flower: flowers[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width / 2 - 24, height: 128)
+        return CGSize(width: self.view.frame.width / 2 - 24, height: 172)
         }
 }

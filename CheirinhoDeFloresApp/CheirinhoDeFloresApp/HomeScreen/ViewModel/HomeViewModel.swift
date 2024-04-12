@@ -7,8 +7,10 @@
 
 import Foundation
 
-class FlowerViewModel {
-    var flowers: [Flower]?
+class HomeViewModel {
+    //var flowers: [Flower]? //= [Flower]()
+    //var flowerNames: [String] = []
+    var flowers = Observable<[CellViewModel]?>(nil)
     let repository: FlowerRepositoryProtocol
     
     init(repository: FlowerRepositoryProtocol = FlowerRepository()) {
@@ -21,7 +23,8 @@ class FlowerViewModel {
                 //tratar o erro
                 return
             }
-            self.flowers = flowers
+            self.flowers.value = flowers.map { CellViewModel(flower: $0)}
+            //self.flowerNames += flowers.map { $0.flowerName }
         }
     }
 }

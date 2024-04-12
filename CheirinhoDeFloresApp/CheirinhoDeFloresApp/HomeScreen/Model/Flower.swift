@@ -8,9 +8,12 @@
 import Foundation
 
 struct Flower: Codable {
-    let flowerName: String?
+    let flowerName: String
+    let imageUrl: String
     
     enum CodingKeys: String, CodingKey {
         case flowerName = "flowerName"
+        case imageUrl = "imageUrl"
     }
 }
+

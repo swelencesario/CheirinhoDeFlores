@@ -25,7 +25,10 @@
 		7CD4BD142BA8B832004507ED /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */; };
 		7CD7D81B2BC721B9006E61B7 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7D81A2BC721B9006E61B7 /* Flower.swift */; };
 		7CD7D81D2BC72275006E61B7 /* FlowerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7D81C2BC72275006E61B7 /* FlowerRepository.swift */; };
-		7CD7D81F2BC72395006E61B7 /* FlowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7D81E2BC72395006E61B7 /* FlowerViewModel.swift */; };
+		7CD7D81F2BC72395006E61B7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7D81E2BC72395006E61B7 /* HomeViewModel.swift */; };
+		7CD7D8212BC77564006E61B7 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7D8202BC77564006E61B7 /* ImageView+Extension.swift */; };
+		7CE853292BC96B4C00F5EC51 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE853282BC96B4C00F5EC51 /* Observable.swift */; };
+		7CE8532B2BC9753800F5EC51 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8532A2BC9753800F5EC51 /* CellViewModel.swift */; };
 		7CE9EE402BBB950B00DDE546 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE3F2BBB950B00DDE546 /* Coordinator.swift */; };
 		7CE9EE422BBB957C00DDE546 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE412BBB957C00DDE546 /* MainCoordinator.swift */; };
 		7CE9EE472BBB99E600DDE546 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE462BBB99E600DDE546 /* LoginView.swift */; };
@@ -59,7 +62,10 @@
 		7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7CD7D81A2BC721B9006E61B7 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		7CD7D81C2BC72275006E61B7 /* FlowerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerRepository.swift; sourceTree = "<group>"; };
-		7CD7D81E2BC72395006E61B7 /* FlowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerViewModel.swift; sourceTree = "<group>"; };
+		7CD7D81E2BC72395006E61B7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7CD7D8202BC77564006E61B7 /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
+		7CE853282BC96B4C00F5EC51 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		7CE8532A2BC9753800F5EC51 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		7CE9EE3F2BBB950B00DDE546 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CE9EE412BBB957C00DDE546 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7CE9EE462BBB99E600DDE546 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 			children = (
 				7CE9EE3E2BBB933300DDE546 /* Coordinator */,
 				7CD4BD132BA8B832004507ED /* ViewController+Extensions.swift */,
+				7CD7D8202BC77564006E61B7 /* ImageView+Extension.swift */,
+				7CE853282BC96B4C00F5EC51 /* Observable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				7CA95C2F2BC59C8900C874CD /* HomeCollectionViewCell.swift */,
+				7CE8532A2BC9753800F5EC51 /* CellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -248,7 +257,7 @@
 		7CC90AD92BC49C2800588377 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7CD7D81E2BC72395006E61B7 /* FlowerViewModel.swift */,
+				7CD7D81E2BC72395006E61B7 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -470,15 +479,18 @@
 				7C8475602BA338C900955475 /* UserRegisterViewController.swift in Sources */,
 				7CD4BD142BA8B832004507ED /* ViewController+Extensions.swift in Sources */,
 				7CF798542B9E92A900AB4638 /* LoginViewController.swift in Sources */,
+				7CD7D8212BC77564006E61B7 /* ImageView+Extension.swift in Sources */,
 				7CD7D81D2BC72275006E61B7 /* FlowerRepository.swift in Sources */,
+				7CE8532B2BC9753800F5EC51 /* CellViewModel.swift in Sources */,
 				7CC90AD32BC47B2100588377 /* LoginRepository.swift in Sources */,
 				7CE9EE402BBB950B00DDE546 /* Coordinator.swift in Sources */,
 				7C53E4862BA0B69E0028E0AC /* UserRegisterRepository.swift in Sources */,
+				7CE853292BC96B4C00F5EC51 /* Observable.swift in Sources */,
 				7C53E4822BA0B3930028E0AC /* User.swift in Sources */,
 				7CF798502B9E92A900AB4638 /* AppDelegate.swift in Sources */,
 				7C84755A2BA13C6700955475 /* UserRegisterViewModel.swift in Sources */,
 				7CF798522B9E92A900AB4638 /* SceneDelegate.swift in Sources */,
-				7CD7D81F2BC72395006E61B7 /* FlowerViewModel.swift in Sources */,
+				7CD7D81F2BC72395006E61B7 /* HomeViewModel.swift in Sources */,
 				7C14EDEF2BB26E070034DCE7 /* AddressViewModel.swift in Sources */,
 				7CC90AD72BC49AF100588377 /* HomeView.swift in Sources */,
 				7CC90AD52BC49ADD00588377 /* HomeViewController.swift in Sources */,
