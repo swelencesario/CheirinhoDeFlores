@@ -105,10 +105,8 @@ class UserRegisterViewController: UIViewController {
             isValidPhone {
             parseData()
             userRegisterViewModel.addUser()
-            print(userRegisterViewModel.userId as Any)
         } else {
             callErrorAlert(title: "Erro", message: "Por favor, preencha os campos corretamente")
         }
-        //coordinator?.goToAddressScreen(userId: userRegisterViewModel.userId ?? 0)
     }
 }

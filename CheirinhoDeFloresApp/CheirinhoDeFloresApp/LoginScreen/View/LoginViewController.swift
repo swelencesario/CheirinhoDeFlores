@@ -31,18 +31,13 @@ class LoginViewController: UIViewController {
     }
     
     @objc func goToRegisterScreen() {
-        coordinator?.goToHomeScreen()
-        //coordinator?.goToRegisterScreen()
+        //coordinator?.goToHomeScreen()
+        coordinator?.goToRegisterScreen()
     }
     
     @objc func login() {
-        guard let username = loginView.usernameField.text else {
-            //se o campo tiver vazio, o que fazer?
-            return
-        }
-        
-        guard let password = loginView.passwordField.text else {
-            //se o campo tiver vazio, o que fazer?
+        guard let username = loginView.usernameField.text, let password = loginView.passwordField.text else {
+            callErrorAlert(title: "Atenção", message: "Por favor, preencha os campos corretamente")
             return
         }
         loginViewModel.login(username: username, password: password)

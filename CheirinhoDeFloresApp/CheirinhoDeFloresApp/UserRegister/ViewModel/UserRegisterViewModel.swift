@@ -52,12 +52,10 @@ class UserRegisterViewModel {
             guard let userId = userId else {
                 self.errorTitle = "Desculpe, algo inesperado aconteceu"
                 self.errorMessage = "Tente novamente em alguns instantes"
-                print(userId as Any)
                 return
             }
             self.userId = userId
             self.coordinator.goToAddressScreen(userId: userId)
-            print(userId)
         }
     }
 }

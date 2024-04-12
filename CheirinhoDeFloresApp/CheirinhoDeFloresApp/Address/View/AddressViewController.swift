@@ -11,7 +11,7 @@ class AddressViewController: UIViewController {
     var userId: Int?
     var coordinator: MainCoordinator?
     let addressView = AddressView()
-    var addressViewModel = AddressViewModel()
+    var addressViewModel: AddressViewModel
     
     
     override func viewDidLoad() {
@@ -24,9 +24,11 @@ class AddressViewController: UIViewController {
         self.view = addressView
     }
     
-    init(coordinator: MainCoordinator? = nil, userId: Int) {
+    init(coordinator: MainCoordinator? = nil, userId: Int, addressViewModel: AddressViewModel) {
         self.coordinator = coordinator
         self.userId = userId
+        self.addressViewModel = addressViewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,9 +37,6 @@ class AddressViewController: UIViewController {
     }
     
     func parseData() {
-        //addressViewModel.userId = self.userId
-        //print(addressViewModel.userId as Any)
-        //print(self.userId as Any)
         addressViewModel.zipCode = addressView.zipCodeField.text
         addressViewModel.street = addressView.streetField.text
         addressViewModel.number = Int(addressView.houseNumberField.text ?? "")

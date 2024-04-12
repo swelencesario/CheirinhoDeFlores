@@ -29,8 +29,8 @@ public class MainCoordinator: Coordinator {
     }
     
     func goToAddressScreen(userId: Int) {
-        let vc = AddressViewController(userId: userId)
-        vc.coordinator = self
+        let vm = AddressViewModel(coordinator: self)
+        let vc = AddressViewController(userId: userId, addressViewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -45,7 +45,8 @@ public class MainCoordinator: Coordinator {
     }
     
     func goToHomeScreen() {
-        let vc = HomeViewController(coordinator: self)
+        let vm = HomeViewModel(coordinator: self)
+        let vc = HomeViewController(homeViewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
 }

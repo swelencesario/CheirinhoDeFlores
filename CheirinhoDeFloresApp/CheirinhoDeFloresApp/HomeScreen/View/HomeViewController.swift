@@ -10,11 +10,10 @@ import UIKit
 class HomeViewController: UIViewController {
     var flowers = [CellViewModel]()
     let homeView = HomeView()
-    var homeViewModel = HomeViewModel()
-    let coordinator: MainCoordinator
+    var homeViewModel: HomeViewModel
     
-    init(coordinator: MainCoordinator) {
-        self.coordinator = coordinator
+    init(homeViewModel: HomeViewModel) {
+        self.homeViewModel = homeViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,13 +24,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Presenteie com flores"
         homeView.collection.dataSource = self
         homeView.collection.delegate = self
         bindFlowers()
         homeViewModel.getFlowers()
-        
-        
-        self.title = "Presenteie com flores"
     }
     
     override func loadView() {
@@ -65,5 +62,5 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.width / 2 - 24, height: 172)
-        }
+    }
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 class HomeViewModel {
-    //var flowers: [Flower]? //= [Flower]()
-    //var flowerNames: [String] = []
     var flowers = Observable<[CellViewModel]?>(nil)
     let repository: FlowerRepositoryProtocol
+    var coordinator: MainCoordinator
     
-    init(repository: FlowerRepositoryProtocol = FlowerRepository()) {
+    init(repository: FlowerRepositoryProtocol = FlowerRepository(), coordinator: MainCoordinator) {
         self.repository = repository
+        self.coordinator = coordinator
     }
     
     func getFlowers() {
@@ -24,7 +24,6 @@ class HomeViewModel {
                 return
             }
             self.flowers.value = flowers.map { CellViewModel(flower: $0)}
-            //self.flowerNames += flowers.map { $0.flowerName }
         }
     }
 }
