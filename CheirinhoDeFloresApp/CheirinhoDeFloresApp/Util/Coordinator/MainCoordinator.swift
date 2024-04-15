@@ -49,4 +49,9 @@ public class MainCoordinator: Coordinator {
         let vc = HomeViewController(homeViewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func goToDetailsView() {
+        let vc = DetailsViewController()
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

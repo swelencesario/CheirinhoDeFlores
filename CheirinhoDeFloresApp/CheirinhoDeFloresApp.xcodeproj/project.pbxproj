@@ -29,6 +29,8 @@
 		7CD7D8212BC77564006E61B7 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7D8202BC77564006E61B7 /* ImageView+Extension.swift */; };
 		7CE853292BC96B4C00F5EC51 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE853282BC96B4C00F5EC51 /* Observable.swift */; };
 		7CE8532B2BC9753800F5EC51 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8532A2BC9753800F5EC51 /* CellViewModel.swift */; };
+		7CE853302BC9C33400F5EC51 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8532F2BC9C33400F5EC51 /* DetailsView.swift */; };
+		7CE853322BC9CFC000F5EC51 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE853312BC9CFC000F5EC51 /* DetailsViewController.swift */; };
 		7CE9EE402BBB950B00DDE546 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE3F2BBB950B00DDE546 /* Coordinator.swift */; };
 		7CE9EE422BBB957C00DDE546 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE412BBB957C00DDE546 /* MainCoordinator.swift */; };
 		7CE9EE472BBB99E600DDE546 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9EE462BBB99E600DDE546 /* LoginView.swift */; };
@@ -66,6 +68,8 @@
 		7CD7D8202BC77564006E61B7 /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
 		7CE853282BC96B4C00F5EC51 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		7CE8532A2BC9753800F5EC51 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		7CE8532F2BC9C33400F5EC51 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		7CE853312BC9CFC000F5EC51 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7CE9EE3F2BBB950B00DDE546 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CE9EE412BBB957C00DDE546 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7CE9EE462BBB99E600DDE546 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -278,6 +282,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7CE8532C2BC9C2E400F5EC51 /* DetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7CE8532D2BC9C2F600F5EC51 /* View */,
+				7CE8532E2BC9C2FF00F5EC51 /* ViewModel */,
+			);
+			path = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		7CE8532D2BC9C2F600F5EC51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CE8532F2BC9C33400F5EC51 /* DetailsView.swift */,
+				7CE853312BC9CFC000F5EC51 /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CE8532E2BC9C2FF00F5EC51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		7CE9EE3E2BBB933300DDE546 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +354,7 @@
 		7CF7984E2B9E92A900AB4638 /* CheirinhoDeFloresApp */ = {
 			isa = PBXGroup;
 			children = (
+				7CE8532C2BC9C2E400F5EC51 /* DetailsScreen */,
 				7C84755B2BA13D2C00955475 /* Util */,
 				7C53E4782BA0B25E0028E0AC /* LoginScreen */,
 				7C53E4792BA0B2680028E0AC /* UserRegister */,
@@ -474,6 +504,7 @@
 				7CD7D81B2BC721B9006E61B7 /* Flower.swift in Sources */,
 				7C53E4882BA0B6F20028E0AC /* AddressRepository.swift in Sources */,
 				7C4EECB32BBDE82200A8844F /* AddressView.swift in Sources */,
+				7CE853302BC9C33400F5EC51 /* DetailsView.swift in Sources */,
 				7C53E4842BA0B43C0028E0AC /* Address.swift in Sources */,
 				7C53E47C2BA0B2E10028E0AC /* LoginViewModel.swift in Sources */,
 				7C8475602BA338C900955475 /* UserRegisterViewController.swift in Sources */,
@@ -499,6 +530,7 @@
 				7CE9EE422BBB957C00DDE546 /* MainCoordinator.swift in Sources */,
 				7CE9EE472BBB99E600DDE546 /* LoginView.swift in Sources */,
 				7C14EDF72BB26EF20034DCE7 /* AddressViewController.swift in Sources */,
+				7CE853322BC9CFC000F5EC51 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
