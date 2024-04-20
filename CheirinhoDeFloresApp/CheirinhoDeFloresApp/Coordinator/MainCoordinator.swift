@@ -47,11 +47,15 @@ public class MainCoordinator: Coordinator {
     func goToHomeScreen() {
         let vm = HomeViewModel(coordinator: self)
         let vc = HomeViewController(homeViewModel: vm)
+        
+        let view = TabBarController(tabControllers: [UIViewController(), UIViewController(), UIViewController()])
+        
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToDetailsView() {
-        let vc = DetailsViewController()
+    func goToDetailsScreen(flowerId: Int) {
+        let vm = DetailsViewModel(coordinator: self)
+        let vc = DetailsViewController(flowerId: flowerId, detailsViewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
 }
