@@ -37,6 +37,7 @@ class UserRegisterView: UIView {
         textField.borderStyle = .roundedRect
         textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.placeholder = "Nome de Usuário"
+        textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.autocorrectionType = .no
         
@@ -48,6 +49,7 @@ class UserRegisterView: UIView {
         textField.borderStyle = .roundedRect
         textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.placeholder = "Senha"
+        textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
         textField.autocorrectionType = .no
@@ -60,6 +62,7 @@ class UserRegisterView: UIView {
         textField.borderStyle = .roundedRect
         textField.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         textField.placeholder = "Email"
+        textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = .no
