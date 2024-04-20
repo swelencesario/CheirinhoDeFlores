@@ -4,7 +4,7 @@
 
 - O projeto está sendo desenvolvido com a linguagem Swift, utilizando o framework UIKit. Todos os produtos, assim como suas características, estão sendo requisitados a um Back End por meio de requisições Http. Todos os dados estão sendo salvos neste mesmo Back End. O link para o repositório do Back End está aqui: [Link do Back End](https://github.com/swelencesario/CheirinhoDeFloresBackend).
 
-- Funcionalidades: 
+## Funcionalidades: 
 
 - Criar uma conta de usuário
 - Realizar login e ir para a primeira tela (Home)
@@ -16,15 +16,15 @@
 - No carrinho, é possível ver a lista dos produtos que foram adicionados e editar a quantidade e/ou excluir produtos.
 - No carrinho, é possível ver o preço total dos produtos e ir para o pagamento.
 
-- Como rodar a aplicação:
+## Como rodar a aplicação:
 
-- É necessário ter instalado:
+### É necessário ter instalado:
 
 - Sistema operacional macOS (não é possível buildar o projeto em outros sistemas operacionais).
 - IDE de desenvolvimento Xcode.
 - Cocoapods
 
-- Para rodar:
+## Para rodar:
 
 - Faça o clone do projeto e abra o arquivo do tipo .xcworkspace. 
 - Abra o terminal, vá para a pasta onde encontra-se o arquivo Podfile e use o seguinte comando em seu terminal: pod install
