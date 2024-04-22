@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController {
     var flowerName: String?
     var flowerPrice: String?
     var flowerImage: String?
-
+    
     let detailsView = DetailsView()
     var detailsViewModel: DetailsViewModel
     
@@ -26,24 +26,33 @@ class DetailsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsViewModel.getFlowerById(flowerId: flowerId)
         setupViewValues()
-        detailsView.cartButton.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
+        buttonTargets()
+        
+//        let rightButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonTapped))
+//        rightButton.title = "Cafrinho"
+        let rightButton = UIBarButtonItem(title: "Ver carrinho", style: .plain, target: self, action: #selector(rightButtonTapped))
+        self.navigationItem.rightBarButtonItem = rightButton
     }
     
     override func loadView() {
         self.view = detailsView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        detailsView.stepper.addTarget(self, action: #selector(updateStepper), for: .valueChanged)
-    }
-    
     @objc func addToCart() {
         self.callErrorAlert(title: "Produto adicionado com sucesso", message: "")
+    }
+    
+    @objc func rightButtonTapped() {
+        print("Botão direito foi tocado!")
+    }
+    func buttonTargets() {
+        detailsView.cartButton.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
+        detailsView.stepper.addTarget(self, action: #selector(updateStepper), for: .valueChanged)
     }
     
     func setupViewValues() {

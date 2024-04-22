@@ -32,9 +32,10 @@ class LoginViewController: UIViewController {
     
     @objc func goToRegisterScreen() {
         //coordinator?.goToHomeScreen()
-        coordinator?.goToRegisterScreen()
+        //coordinator?.goToRegisterScreen()
         //coordinator?.goToDetailsView()
         //coordinator?.goToDetailsView()
+        coordinator?.callTabBar()
     }
     
     @objc func login() {

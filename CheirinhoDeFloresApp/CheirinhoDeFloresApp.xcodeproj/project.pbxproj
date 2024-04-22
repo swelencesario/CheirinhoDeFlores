@@ -17,6 +17,12 @@
 		7C53E4862BA0B69E0028E0AC /* UserRegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4852BA0B69E0028E0AC /* UserRegisterRepository.swift */; };
 		7C53E4882BA0B6F20028E0AC /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */; };
 		7C6594712BD04BB000039A00 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6594702BD04BB000039A00 /* TabBarController.swift */; };
+		7C6F75272BD6FD4600BF8413 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F75262BD6FD4600BF8413 /* CartView.swift */; };
+		7C6F75292BD6FD5F00BF8413 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F75282BD6FD5E00BF8413 /* CartViewModel.swift */; };
+		7C6F752B2BD6FD7400BF8413 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F752A2BD6FD7400BF8413 /* CartViewController.swift */; };
+		7C6F752D2BD6FDC800BF8413 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F752C2BD6FDC800BF8413 /* AccountViewController.swift */; };
+		7C6F752F2BD6FDE100BF8413 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F752E2BD6FDE100BF8413 /* AccountView.swift */; };
+		7C6F75312BD6FDF400BF8413 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F75302BD6FDF400BF8413 /* AccountViewModel.swift */; };
 		7C84755A2BA13C6700955475 /* UserRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8475592BA13C6700955475 /* UserRegisterViewModel.swift */; };
 		7C8475602BA338C900955475 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84755F2BA338C900955475 /* UserRegisterViewController.swift */; };
 		7CA95C302BC59C8900C874CD /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA95C2F2BC59C8900C874CD /* HomeCollectionViewCell.swift */; };
@@ -59,6 +65,12 @@
 		7C53E4852BA0B69E0028E0AC /* UserRegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterRepository.swift; sourceTree = "<group>"; };
 		7C53E4872BA0B6F20028E0AC /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
 		7C6594702BD04BB000039A00 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7C6F75262BD6FD4600BF8413 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		7C6F75282BD6FD5E00BF8413 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		7C6F752A2BD6FD7400BF8413 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		7C6F752C2BD6FDC800BF8413 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		7C6F752E2BD6FDE100BF8413 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		7C6F75302BD6FDF400BF8413 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		7C8475592BA13C6700955475 /* UserRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewModel.swift; sourceTree = "<group>"; };
 		7C84755F2BA338C900955475 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
 		7CA95C2F2BC59C8900C874CD /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -187,8 +199,8 @@
 			children = (
 				7CC90ADB2BC49D5000588377 /* Model */,
 				7CC90ADA2BC49D0100588377 /* Repository */,
-				7CC90AD82BC49C1700588377 /* View */,
 				7CC90AD92BC49C2800588377 /* ViewModel */,
+				7CC90AD82BC49C1700588377 /* View */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -223,6 +235,26 @@
 				7C6594702BD04BB000039A00 /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		7C6F75242BD6FCC600BF8413 /* CartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7C6F75262BD6FD4600BF8413 /* CartView.swift */,
+				7C6F75282BD6FD5E00BF8413 /* CartViewModel.swift */,
+				7C6F752A2BD6FD7400BF8413 /* CartViewController.swift */,
+			);
+			path = CartScreen;
+			sourceTree = "<group>";
+		};
+		7C6F75252BD6FD0000BF8413 /* AccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7C6F752E2BD6FDE100BF8413 /* AccountView.swift */,
+				7C6F75302BD6FDF400BF8413 /* AccountViewModel.swift */,
+				7C6F752C2BD6FDC800BF8413 /* AccountViewController.swift */,
+			);
+			path = AccountScreen;
 			sourceTree = "<group>";
 		};
 		7C8475582BA13C2B00955475 /* ViewModel */ = {
@@ -378,13 +410,15 @@
 			isa = PBXGroup;
 			children = (
 				7CE9EE3E2BBB933300DDE546 /* Coordinator */,
+				7C84755B2BA13D2C00955475 /* Util */,
 				7C65946F2BD04B6800039A00 /* TabBar */,
 				7CE8532C2BC9C2E400F5EC51 /* DetailsScreen */,
-				7C84755B2BA13D2C00955475 /* Util */,
 				7C53E4782BA0B25E0028E0AC /* LoginScreen */,
 				7C53E4792BA0B2680028E0AC /* UserRegister */,
 				7C14EDF12BB26E7C0034DCE7 /* Address */,
 				7C53E47A2BA0B2790028E0AC /* HomeScreen */,
+				7C6F75242BD6FCC600BF8413 /* CartScreen */,
+				7C6F75252BD6FD0000BF8413 /* AccountScreen */,
 				7CF7984F2B9E92A900AB4638 /* AppDelegate.swift */,
 				7CF798512B9E92A900AB4638 /* SceneDelegate.swift */,
 				7CF798582B9E92AA00AB4638 /* Assets.xcassets */,
@@ -526,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C6F752D2BD6FDC800BF8413 /* AccountViewController.swift in Sources */,
 				7CD7D81B2BC721B9006E61B7 /* Flower.swift in Sources */,
 				7C53E4882BA0B6F20028E0AC /* AddressRepository.swift in Sources */,
 				7C4EECB32BBDE82200A8844F /* AddressView.swift in Sources */,
@@ -542,10 +577,13 @@
 				7CE9EE402BBB950B00DDE546 /* Coordinator.swift in Sources */,
 				7C53E4862BA0B69E0028E0AC /* UserRegisterRepository.swift in Sources */,
 				7CE853292BC96B4C00F5EC51 /* Observable.swift in Sources */,
+				7C6F752B2BD6FD7400BF8413 /* CartViewController.swift in Sources */,
+				7C6F75292BD6FD5F00BF8413 /* CartViewModel.swift in Sources */,
 				7C53E4822BA0B3930028E0AC /* User.swift in Sources */,
 				7CF798502B9E92A900AB4638 /* AppDelegate.swift in Sources */,
 				7C84755A2BA13C6700955475 /* UserRegisterViewModel.swift in Sources */,
 				7CF798522B9E92A900AB4638 /* SceneDelegate.swift in Sources */,
+				7C6F75272BD6FD4600BF8413 /* CartView.swift in Sources */,
 				7CD7D81F2BC72395006E61B7 /* HomeViewModel.swift in Sources */,
 				7C14EDEF2BB26E070034DCE7 /* AddressViewModel.swift in Sources */,
 				7CC90AD72BC49AF100588377 /* HomeView.swift in Sources */,
@@ -554,10 +592,12 @@
 				7CE853372BCDB2B500F5EC51 /* DetailsRepository.swift in Sources */,
 				7CA95C302BC59C8900C874CD /* HomeCollectionViewCell.swift in Sources */,
 				7C4EECB12BBCEB3C00A8844F /* UserRegisterView.swift in Sources */,
+				7C6F752F2BD6FDE100BF8413 /* AccountView.swift in Sources */,
 				7CE9EE422BBB957C00DDE546 /* MainCoordinator.swift in Sources */,
 				7CE9EE472BBB99E600DDE546 /* LoginView.swift in Sources */,
 				7CE853342BCD8EFB00F5EC51 /* DetailsViewModel.swift in Sources */,
 				7C14EDF72BB26EF20034DCE7 /* AddressViewController.swift in Sources */,
+				7C6F75312BD6FDF400BF8413 /* AccountViewModel.swift in Sources */,
 				7CE853322BC9CFC000F5EC51 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

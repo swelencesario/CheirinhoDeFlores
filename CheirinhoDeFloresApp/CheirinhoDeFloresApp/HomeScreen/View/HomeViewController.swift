@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Presenteie com flores"
+        //self.title = "Presenteie com flores"
         homeView.collection.dataSource = self
         homeView.collection.delegate = self
         bindFlowers()

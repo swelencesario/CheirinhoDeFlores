@@ -44,12 +44,28 @@ public class MainCoordinator: Coordinator {
         navigationController.present(alert, animated: true)
     }
     
+    func callTabBar() {
+        let homeViewModel = HomeViewModel(coordinator: self)
+        let homeViewController = HomeViewController(homeViewModel: homeViewModel)
+        homeViewController.title = ""
+        homeViewController.tabBarItem = UITabBarItem(title: "Início", image: UIImage(systemName: "house"), tag: 0)
+        
+        let cartViewController = CartViewController()
+        cartViewController.tabBarItem = UITabBarItem(title: "Carrinho", image: UIImage(systemName: "cart.fill"), tag: 1)
+        
+        let accountViewController = AccountViewController()
+        accountViewController.tabBarItem = UITabBarItem(title: "Conta", image: UIImage(systemName: "person.fill"), tag: 2)
+        
+        
+        let tabBar = TabBarController()
+        tabBar.viewControllers = [homeViewController, cartViewController, accountViewController]
+        navigationController.pushViewController(tabBar, animated: true)
+    }
+    
     func goToHomeScreen() {
         let vm = HomeViewModel(coordinator: self)
         let vc = HomeViewController(homeViewModel: vm)
-        
-        let view = TabBarController(tabControllers: [UIViewController(), UIViewController(), UIViewController()])
-        
+        vc.title = "Presenteie com flores"
         navigationController.pushViewController(vc, animated: true)
     }
     

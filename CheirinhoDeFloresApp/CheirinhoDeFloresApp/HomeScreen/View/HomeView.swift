@@ -68,7 +68,7 @@ class HomeView: UIView {
             collection.topAnchor.constraint(equalTo: banner.bottomAnchor, constant: 24.0),
             collection.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
             collection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
-            collection.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16.0),
+            collection.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -104.0),
         ])
     }
 }
