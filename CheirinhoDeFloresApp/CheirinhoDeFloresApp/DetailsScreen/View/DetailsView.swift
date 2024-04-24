@@ -10,7 +10,7 @@ import UIKit
 class DetailsView: UIView {
     
     lazy var flowerImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "rosa"))
+        let image = UIImageView(image: UIImage(named: "loading"))
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 8.0
         image.clipsToBounds = true

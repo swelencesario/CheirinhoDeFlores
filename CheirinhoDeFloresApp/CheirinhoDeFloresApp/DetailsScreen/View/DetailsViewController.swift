@@ -33,8 +33,6 @@ class DetailsViewController: UIViewController {
         setupViewValues()
         buttonTargets()
         
-//        let rightButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonTapped))
-//        rightButton.title = "Cafrinho"
         let rightButton = UIBarButtonItem(title: "Ver carrinho", style: .plain, target: self, action: #selector(rightButtonTapped))
         self.navigationItem.rightBarButtonItem = rightButton
     }

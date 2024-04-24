@@ -11,7 +11,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = .black
-     
+        self.tabBar.tintColor = UIColor(named: "greatPinkColor")
+        self.tabBar.unselectedItemTintColor = UIColor(named: "greatPinkColor")
     }
 }

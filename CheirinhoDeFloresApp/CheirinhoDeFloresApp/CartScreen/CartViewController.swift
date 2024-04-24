@@ -7,23 +7,35 @@
 
 import UIKit
 
-class CartViewController: UIViewController {
-
+class CartViewController: UINavigationController {
+    let cartView = CartView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Carrinho"
+        cartView.productList.dataSource = self
+        cartView.productList.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func loadView() {
+        self.view = cartView
     }
-    */
+}
 
+extension CartViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell
+        //cell?.setup(searchResults[indexPath.row])
+        return cell ?? UITableViewCell()
+    }
+}
+
+extension CartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 104.0
+    }
 }
