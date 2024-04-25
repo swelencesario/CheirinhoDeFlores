@@ -11,7 +11,8 @@ class DetailsViewController: UIViewController {
     var userId: Int
     var flowerId: Int
     var flowerName: String?
-    var flowerPrice: String?
+    var flowerPrice: Double?
+    var totalPrice: Double?
     var flowerImage: String?
     
     let detailsView = DetailsView()
@@ -44,7 +45,10 @@ class DetailsViewController: UIViewController {
     }
     
     @objc func addToCart() {
-        self.callErrorAlert(title: "Produto adicionado com sucesso", message: "")
+        //self.callErrorAlert(title: "Produto adicionado com sucesso", message: "")
+        let totalPrice = detailsViewModel.calculateTotalPrice(unitPrice: flowerPrice ?? 0.0, quantity: detailsView.stepper.value)
+        detailsViewModel.addToCart(userId: userId, flowerId: flowerId, quantity: Int(detailsView.stepper.value), totalPrice: totalPrice)//tratar o preço total
+        print("flowerId na action do botao: \(flowerId)")
     }
     
     @objc func rightButtonTapped() {
@@ -56,6 +60,12 @@ class DetailsViewController: UIViewController {
     }
     
     func setupViewValues() {
+        detailsViewModel.flowerId.bind { [weak self] flowerId in
+            guard let flowerId = flowerId else { return }
+            self?.flowerId = flowerId
+            print("flowerId na view controller: \(flowerId)")
+        }
+        
         detailsViewModel.flowerName.bind { [weak self] name in
             guard let name = name else { return }
             self?.flowerName = name
@@ -67,6 +77,7 @@ class DetailsViewController: UIViewController {
         detailsViewModel.flowerPrice.bind { [weak self] price in
             guard let price = price else { return }
             self?.detailsView.priceLabel.text = "R$ \(price)"
+            self?.flowerPrice = price
         }
         
         detailsViewModel.flowerUrl.bind { [weak self] image in
