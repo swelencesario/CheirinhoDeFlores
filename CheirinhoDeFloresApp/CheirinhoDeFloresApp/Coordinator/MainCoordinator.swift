@@ -44,9 +44,9 @@ public class MainCoordinator: Coordinator {
         navigationController.present(alert, animated: true)
     }
     
-    func callTabBar() {
+    func callTabBar(userId: Int) {
         let homeViewModel = HomeViewModel(coordinator: self)
-        let homeViewController = HomeViewController(homeViewModel: homeViewModel)
+        let homeViewController = HomeViewController(userId: userId, homeViewModel: homeViewModel)
         homeViewController.title = ""
         homeViewController.tabBarItem = UITabBarItem(title: "Início", image: UIImage(systemName: "house"), tag: 0)
         
@@ -57,21 +57,21 @@ public class MainCoordinator: Coordinator {
         accountViewController.tabBarItem = UITabBarItem(title: "Conta", image: UIImage(systemName: "person.fill"), tag: 2)
         
         
-        let tabBar = TabBarController()
+        let tabBar = TabBarController(userId: userId)
         tabBar.viewControllers = [homeViewController, cartViewController, accountViewController]
         navigationController.pushViewController(tabBar, animated: true)
     }
     
-    func goToHomeScreen() {
+    func goToHomeScreen(userId: Int) {
         let vm = HomeViewModel(coordinator: self)
-        let vc = HomeViewController(homeViewModel: vm)
+        let vc = HomeViewController(userId: userId, homeViewModel: vm)
         vc.title = "Presenteie com flores"
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToDetailsScreen(flowerId: Int) {
+    func goToDetailsScreen(userId: Int, flowerId: Int) {
         let vm = DetailsViewModel(coordinator: self)
-        let vc = DetailsViewController(flowerId: flowerId, detailsViewModel: vm)
+        let vc = DetailsViewController(userId: userId, flowerId: flowerId, detailsViewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
 }

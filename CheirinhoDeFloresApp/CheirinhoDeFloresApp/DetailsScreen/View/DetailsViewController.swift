@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    var userId: Int
     var flowerId: Int
     var flowerName: String?
     var flowerPrice: String?
@@ -16,7 +17,8 @@ class DetailsViewController: UIViewController {
     let detailsView = DetailsView()
     var detailsViewModel: DetailsViewModel
     
-    init(flowerId: Int, detailsViewModel: DetailsViewModel) {
+    init(userId: Int, flowerId: Int, detailsViewModel: DetailsViewModel) {
+        self.userId = userId
         self.flowerId = flowerId
         self.detailsViewModel = detailsViewModel
         

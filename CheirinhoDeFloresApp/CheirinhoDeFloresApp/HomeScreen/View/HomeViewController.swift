@@ -8,11 +8,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    var userId: Int
     var flowers = [CellViewModel]()
     let homeView = HomeView()
     var homeViewModel: HomeViewModel
     
-    init(homeViewModel: HomeViewModel) {
+    init(userId: Int, homeViewModel: HomeViewModel) {
+        self.userId = userId
         self.homeViewModel = homeViewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,6 +66,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        homeViewModel.coordinator.goToDetailsScreen(flowerId: flowers[indexPath.row].flowerId)
+        homeViewModel.coordinator.goToDetailsScreen(userId: userId, flowerId: flowers[indexPath.row].flowerId)
+        print("User id: \(userId)")
+        print("ProductId: \(flowers[indexPath.row].flowerId)")
     }
 }

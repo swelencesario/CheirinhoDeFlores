@@ -32,7 +32,7 @@ class AddressViewModel {
                 return
             }
             //print(self.userId as Any)
-            self.coordinator.goToHomeScreen()
+            self.coordinator.goToHomeScreen(userId: id)
             //no sucesso, exibir uma mensagem de sucesso
         }
     }
