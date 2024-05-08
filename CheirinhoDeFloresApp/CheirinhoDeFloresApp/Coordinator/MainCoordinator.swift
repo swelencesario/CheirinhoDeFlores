@@ -50,7 +50,8 @@ public class MainCoordinator: Coordinator {
         homeViewController.title = ""
         homeViewController.tabBarItem = UITabBarItem(title: "Início", image: UIImage(systemName: "house"), tag: 0)
         
-        let cartViewController = CartViewController()
+        let cartViewModel = CartViewModel()
+        let cartViewController = CartViewController(userId: userId, cartViewModel: cartViewModel)
         cartViewController.tabBarItem = UITabBarItem(title: "Carrinho", image: UIImage(systemName: "cart.fill"), tag: 1)
         
         let accountViewController = AccountViewController()

@@ -22,7 +22,8 @@ class LoginViewModel {
                 self.coordinator.callAlert(title: "Usuário ou senha incorretos", message: "")
                 return
             }
-            self.coordinator.goToHomeScreen(userId: success)
+            //self.coordinator.goToHomeScreen(userId: success)
+            self.coordinator.callTabBar(userId: success)
             print(success)
             print("User ID View Model: \(String(describing: success))")
         }

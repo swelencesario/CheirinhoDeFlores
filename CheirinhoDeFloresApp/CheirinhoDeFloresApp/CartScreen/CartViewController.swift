@@ -8,7 +8,19 @@
 import UIKit
 
 class CartViewController: UINavigationController {
+    let userId: Int
     let cartView = CartView()
+    var cartViewModel = CartViewModel()
+    
+    init(userId: Int, cartViewModel: CartViewModel) {
+        self.userId = userId
+        self.cartViewModel = cartViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
