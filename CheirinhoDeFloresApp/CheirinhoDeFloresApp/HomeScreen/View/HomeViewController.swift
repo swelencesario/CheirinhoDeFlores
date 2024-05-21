@@ -9,13 +9,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var userId: Int
-    var flowers = [CellViewModel]()
     let homeView = HomeView()
-    var homeViewModel: HomeViewModel
+    var flowers = [CellViewModel]()
     
-    init(userId: Int, homeViewModel: HomeViewModel) {
+    var homeViewModel: HomeViewModel
+    var coordinator: MainCoordinator
+    
+    init(userId: Int, homeViewModel: HomeViewModel, coordinator: MainCoordinator) {
         self.userId = userId
         self.homeViewModel = homeViewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,12 +34,19 @@ class HomeViewController: UIViewController {
         homeView.collection.delegate = self
         bindFlowers()
         homeViewModel.getFlowers()
+        //homeView.cartButton.addTarget(self, action: #selector(goToCart), for: .touchUpInside)
     }
     
     override func loadView() {
         super.loadView()
         self.view = homeView
     }
+    
+//    @objc func goToCart() {
+//        self.coordinator.goToCartScreen(userId: userId)
+//        print(userId)
+//        //self.coordinator.goToAddressScreen(userId: userId)
+//    }
     
     func bindFlowers() {
         homeViewModel.flowers.bind { [weak self] flowerList in
@@ -66,7 +76,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        homeViewModel.coordinator.goToDetailsScreen(userId: userId, flowerId: flowers[indexPath.row].flowerId)
+        self.coordinator.goToDetailsScreen(userId: userId, flowerId: flowers[indexPath.row].flowerId)
         print("User id: \(userId)")
         print("ProductId: \(flowers[indexPath.row].flowerId)")
     }

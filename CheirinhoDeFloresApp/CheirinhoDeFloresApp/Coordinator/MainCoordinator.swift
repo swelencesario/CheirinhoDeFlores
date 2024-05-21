@@ -45,8 +45,8 @@ public class MainCoordinator: Coordinator {
     }
     
     func callTabBar(userId: Int) {
-        let homeViewModel = HomeViewModel(coordinator: self)
-        let homeViewController = HomeViewController(userId: userId, homeViewModel: homeViewModel)
+        let homeViewModel = HomeViewModel()
+        let homeViewController = HomeViewController(userId: userId, homeViewModel: homeViewModel, coordinator: self)
         homeViewController.title = ""
         homeViewController.tabBarItem = UITabBarItem(title: "Início", image: UIImage(systemName: "house"), tag: 0)
         
@@ -64,8 +64,8 @@ public class MainCoordinator: Coordinator {
     }
     
     func goToHomeScreen(userId: Int) {
-        let vm = HomeViewModel(coordinator: self)
-        let vc = HomeViewController(userId: userId, homeViewModel: vm)
+        let vm = HomeViewModel()
+        let vc = HomeViewController(userId: userId, homeViewModel: vm, coordinator: self)
         vc.title = "Presenteie com flores"
         navigationController.pushViewController(vc, animated: true)
     }
@@ -73,6 +73,13 @@ public class MainCoordinator: Coordinator {
     func goToDetailsScreen(userId: Int, flowerId: Int) {
         let vm = DetailsViewModel(coordinator: self)
         let vc = DetailsViewController(userId: userId, flowerId: flowerId, detailsViewModel: vm)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func goToCartScreen(userId: Int) {
+        let vm = CartViewModel()
+        let vc = CartViewController(userId: userId, cartViewModel: vm)
+        vc.title = "Carrinho"
         navigationController.pushViewController(vc, animated: true)
     }
 }

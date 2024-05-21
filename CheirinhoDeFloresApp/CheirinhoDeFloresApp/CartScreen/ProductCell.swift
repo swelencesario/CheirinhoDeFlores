@@ -22,7 +22,7 @@ class ProductCell: UITableViewCell {
     }()
     
     lazy var productImage: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "crisantemo"))
+        let img = UIImageView()
         img.layer.cornerRadius = 12
         img.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,7 +43,7 @@ class ProductCell: UITableViewCell {
     
     lazy var priceLabel: UILabel = {
         let label = UILabel()
-        label.text = "R$ 55,00"
+        //label.text = "R$ 55,00"
         label.font = UIFont(name: "Hiragino Sans W3", size: 14.0)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -97,6 +97,13 @@ class ProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupCell(products: ProductCellViewModel) {
+        self.productNameLabel.text = products.productName.capitalized
+        self.quantityLabel.text = String(products.quantity)
+        self.priceLabel.text = "R$\(products.unitPrice) un"
+        self.productImage.loadImageFromURL(urlString: products.imageUrl)
+    }
+    
     func setupViews() {
         contentView.addSubview(containerView)
         containerView.addSubview(productImage)
@@ -141,7 +148,7 @@ class ProductCell: UITableViewCell {
     
     func priceLabelConstraints() {
         NSLayoutConstraint.activate([
-            priceLabel.leadingAnchor.constraint(equalTo: productNameLabel.trailingAnchor, constant: 8.0),
+            priceLabel.leadingAnchor.constraint(greaterThanOrEqualTo: productNameLabel.trailingAnchor, constant: 8.0),
             priceLabel.topAnchor.constraint(greaterThanOrEqualTo: productNameLabel.topAnchor),
             priceLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8.0)
         ])

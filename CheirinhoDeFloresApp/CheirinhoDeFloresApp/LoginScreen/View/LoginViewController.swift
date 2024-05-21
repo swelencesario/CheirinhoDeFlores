@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         //coordinator?.goToRegisterScreen()
         //coordinator?.goToDetailsView()
         //coordinator?.goToDetailsView()
-        coordinator?.callTabBar(userId: 1)
+        //coordinator?.callTabBar(userId: 43)
     }
     
     @objc func login() {

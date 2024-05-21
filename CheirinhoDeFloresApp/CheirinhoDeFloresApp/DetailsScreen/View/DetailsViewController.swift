@@ -53,6 +53,7 @@ class DetailsViewController: UIViewController {
     
     @objc func rightButtonTapped() {
         print("Botão direito foi tocado!")
+        detailsViewModel.coordinator.goToCartScreen(userId: userId)
     }
     func buttonTargets() {
         detailsView.cartButton.addTarget(self, action: #selector(addToCart), for: .touchUpInside)

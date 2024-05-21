@@ -33,6 +33,14 @@ class HomeView: UIView {
         return collection
     }()
     
+    lazy var cartButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Carrinhho", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .systemBackground
@@ -47,11 +55,13 @@ class HomeView: UIView {
     func setupViews() {
         addSubview(banner)
         addSubview(collection)
+        //addSubview(cartButton)
     }
     
     func setupConstraints() {
         bannerConstraints()
         collectionConstraints()
+        //cartButtonConstraints()
     }
     
     func bannerConstraints() {
@@ -69,6 +79,15 @@ class HomeView: UIView {
             collection.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
             collection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
             collection.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -104.0),
+        ])
+    }
+    
+    func cartButtonConstraints() {
+        NSLayoutConstraint.activate([
+            cartButton.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 16.0),
+            cartButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
+            cartButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
+            cartButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24.0)
         ])
     }
 }
