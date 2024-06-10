@@ -10,11 +10,9 @@ import Foundation
 class HomeViewModel {
     var flowers = Observable<[CellViewModel]?>(nil)
     let repository: FlowerRepositoryProtocol
-    var coordinator: MainCoordinator
     
-    init(repository: FlowerRepositoryProtocol = FlowerRepository(), coordinator: MainCoordinator) {
+    init(repository: FlowerRepositoryProtocol = FlowerRepository()) {
         self.repository = repository
-        self.coordinator = coordinator
     }
     
     func getFlowers() {

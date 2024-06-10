@@ -20,7 +20,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }()
     
     lazy var flowerImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "rosa"))
+        let image = UIImageView(image: UIImage(named: "loading"))
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 16

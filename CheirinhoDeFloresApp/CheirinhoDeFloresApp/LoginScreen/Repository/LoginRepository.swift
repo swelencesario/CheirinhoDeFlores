@@ -8,11 +8,11 @@
 import Alamofire
  
 protocol LoginRepositoryProtocol: AnyObject {
-    func login(username: String, password: String, completion: @escaping (User?) -> ())
+    func login(username: String, password: String, completion: @escaping (Int?) -> ())
 }
 
 class LoginRepository: LoginRepositoryProtocol {
-    func login(username: String, password: String, completion: @escaping (User?) -> ()) {
+    func login(username: String, password: String, completion: @escaping (Int?) -> ()) {
         let endpoint: String = "http://localhost:5240/api/users/" + username + "/" + password
         
         AF.request(endpoint, method: .get, parameters: nil, encoding: JSONEncoding.default).responseData { (response) in
@@ -21,7 +21,7 @@ class LoginRepository: LoginRepositoryProtocol {
             case .success(_):
                 guard let data = response.data else { return }
                 do {
-                    let result = try JSONDecoder().decode (User.self, from: data)
+                    let result = try JSONDecoder().decode (Int.self, from: data)
                     completion(result)
                 } catch {
                     completion(nil)

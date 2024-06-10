@@ -19,12 +19,12 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func callErrorAlert(title: String, message: String) -> UIAlertController {
+    func callErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Entendi", style: .default)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-        return alert
+        //return alert
     }
     
     func notValidTextFieldStyle(textField: UITextField) {
