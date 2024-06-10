@@ -60,6 +60,7 @@ public class MainCoordinator: Coordinator {
         
         let tabBar = TabBarController(userId: userId)
         tabBar.viewControllers = [homeViewController, cartViewController, accountViewController]
+        
         navigationController.pushViewController(tabBar, animated: true)
     }
     

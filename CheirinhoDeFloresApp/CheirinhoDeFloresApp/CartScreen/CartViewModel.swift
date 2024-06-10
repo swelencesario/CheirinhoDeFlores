@@ -22,9 +22,7 @@ class CartViewModel {
                 // tratar o erro
                 return
             }
-            self.products.value = response.map {
-                ProductCellViewModel(product: $0)
-            }
+            self.products.value = response.map { ProductCellViewModel(product: $0) }
         
         }
     }

@@ -31,17 +31,35 @@ class CartViewController: UIViewController {
         cartView.productList.delegate = self
         bindProducts()
         
+        
         cartViewModel.getCartProducts(userId: userId)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //cartView.totalLabel =
+        
+        
     }
     
     override func loadView() {
         self.view = cartView
     }
     
+    func handleTotalPrice() -> String {
+        var totalPrice: Double = 0.0
+        
+        for flower in products {
+            var totalUnitPrice = flower.unitPrice * Double(flower.quantity)
+            totalPrice = totalPrice + totalUnitPrice
+        }
+        
+        return "Preço Total: R$ \(totalPrice)"
+    }
+    
     func bindProducts() {
-        cartViewModel.products.bind { [weak self] flowerList in
-            guard let flowerList = flowerList else { return }
-            self?.products = flowerList
+        cartViewModel.products.bind { [weak self] cartList in
+            guard let cartList = cartList else { return }
+            self?.products = cartList
             self?.cartView.productList.reloadData()
         }
     }
@@ -49,12 +67,15 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return self.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell
+        
         cell?.setupCell(products: products[indexPath.row])
+        cell?.productImage.loadImageFromURL(urlString: products[indexPath.row].imageUrl)
+        cartView.totalLabel.text =  handleTotalPrice() // a func ta certa, mas tem que ser chamada em outro lugar.
         return cell ?? UITableViewCell()
     }
 }

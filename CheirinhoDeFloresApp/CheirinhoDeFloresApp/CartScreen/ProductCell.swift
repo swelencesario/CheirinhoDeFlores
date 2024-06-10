@@ -9,6 +9,7 @@ import UIKit
 
 class ProductCell: UITableViewCell {
     static let identifier = "productCellIdentifier"
+    var totalPrice: Double?
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -67,7 +68,6 @@ class ProductCell: UITableViewCell {
         let stepper = UIStepper()
         stepper.minimumValue = 1
         stepper.maximumValue = 10
-        stepper.value = 1
         stepper.backgroundColor = .clear
         stepper.translatesAutoresizingMaskIntoConstraints = false
         
@@ -85,10 +85,9 @@ class ProductCell: UITableViewCell {
         return stack
     }()
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        //backgroundColor = .blue
-        //contentView.backgroundColor = .gray
         setupViews()
         setupConstraints()
     }
@@ -100,8 +99,16 @@ class ProductCell: UITableViewCell {
     func setupCell(products: ProductCellViewModel) {
         self.productNameLabel.text = products.productName.capitalized
         self.quantityLabel.text = String(products.quantity)
-        self.priceLabel.text = "R$\(products.unitPrice) un"
-        self.productImage.loadImageFromURL(urlString: products.imageUrl)
+        self.priceLabel.text = "R$\(products.unitPrice) cada"
+        self.productImage.image = UIImage(named: products.productName)
+        self.stepper.value = Double(products.quantity)
+        
+        self.stepper.addTarget(self, action: #selector(updateStepper), for: .touchUpInside)
+    }
+    
+    @objc func updateStepper(sender: UIStepper) {
+        let valueInt = Int(sender.value)
+        self.quantityLabel.text = String(valueInt)
     }
     
     func setupViews() {
@@ -162,7 +169,6 @@ class ProductCell: UITableViewCell {
     
     func stackConstraints() {
         NSLayoutConstraint.activate([
-            //stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8.0),
             stack.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 16.0),
             stack.topAnchor.constraint(greaterThanOrEqualTo: productNameLabel.bottomAnchor, constant: 8.0),
             stack.bottomAnchor.constraint(equalTo: productImage.bottomAnchor)

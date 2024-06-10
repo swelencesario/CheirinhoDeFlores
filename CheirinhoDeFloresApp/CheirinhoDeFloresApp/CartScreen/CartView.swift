@@ -14,8 +14,8 @@ class CartView: UIView {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.separatorStyle = .none
         table.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-        
         return table
+        
     }()
     
     lazy var totalLabel: UILabel = {
@@ -31,7 +31,7 @@ class CartView: UIView {
     
     lazy var nextButton: UIButton = {
         let button = UIButton(type: .roundedRect)
-        button.setTitle("Avançar", for: .normal)
+        button.setTitle("Concluir compra", for: .normal)
         button.backgroundColor = UIColor(named: "greatPinkColor")
         button.tintColor = .white
         button.clipsToBounds = true

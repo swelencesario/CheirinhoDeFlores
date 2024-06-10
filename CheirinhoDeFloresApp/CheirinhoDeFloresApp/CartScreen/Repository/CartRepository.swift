@@ -21,14 +21,12 @@ class CartRepository: CartRepositoryProtocol {
             case .success(_):
                 guard let data = response.data else { return }
                 do {
-                    // Log the response data as a string to debug any potential issues with the JSON format.
                     if let jsonString = String(data: data, encoding: .utf8) {
                         print("JSON Response: \(jsonString)")
                     }
                     let result = try JSONDecoder().decode ([Cart].self, from: data)
                     completion(result)
                 } catch {
-                    // Log the error to understand why the decoding failed.
                     print("Decoding error: \(error)")
                     completion([])
                 }

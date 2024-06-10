@@ -32,6 +32,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         detailsViewModel.getFlowerById(flowerId: flowerId)
         setupViewValues()
         buttonTargets()
